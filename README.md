@@ -34,12 +34,13 @@ e.g. (if I'm already in a repository directory)
 To be able to use these commands without entering full path to them, 
 add full path to the scripts to system variables:
 
-  sudo nano /etc/enviroment
+  nano ~/.bashrc
 
 And add this line to the end
 
-  PATH="${PATH}:/home/andrej/github/git_manage_all_repositories"
+  export PATH="$PATH:/home/andrej/github/git_manage_all_repositories"
 
-Save and exit.
+Save and exit.  
+Reboot. Now you should see the scripts you've added.
 
 Done :D
