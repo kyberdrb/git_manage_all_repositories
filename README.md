@@ -44,3 +44,8 @@ Save and exit.
 Reboot. Now you should see the scripts you've added.
 
 Done :D
+
+
+
+Sources:
+https://unix.stackexchange.com/questions/162134/how-to-execute-a-bash-script-without-typing
