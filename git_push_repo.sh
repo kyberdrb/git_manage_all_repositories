@@ -9,6 +9,8 @@ if [ "$#" -ne 2 ]; then
   exit 1
 fi
 
+git -C $1 pull
+git -C $1 status
 git -C $1 add -A
 git -C $1 commit -m "$2"
 git -C $1 push
