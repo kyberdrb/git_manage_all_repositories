@@ -49,3 +49,4 @@ Done :D
 
 Sources:
 https://unix.stackexchange.com/questions/162134/how-to-execute-a-bash-script-without-typing
+https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/#platform-linux
