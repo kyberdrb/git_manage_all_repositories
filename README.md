@@ -22,7 +22,7 @@ USAGE:
 Pushes a repository to the server.
 
 USAGE:
-./git_push_repo.sh <repo_folder> <commit_message> <commit_description>
+./git_push_repo.sh <repo_folder> <commit_message> [commit_description]
 
 e.g. (if I'm already in a repository directory)
 

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if [ "$#" -ne 3 ]; then
+if [ "$#" -lt 2 ]; then
   echo "Bad number of arguments"
   echo "Usage"
-  echo "./git_push_all repo_directory commit_message"
+  echo "./git_push_repo <repo_directory> <commit_message> [commit_description]"
   echo "e.g."
-  echo "./git_push_all ~/github/git_repo \"message\" "
+  echo "./git_push_repo ~/github/git_repo \"commit message\" \"commit description\""
   exit 1
 fi
 
@@ -17,4 +17,4 @@ git -C $REPO_DIR pull
 git -C $REPO_DIR status
 git -C $REPO_DIR add -A
 git -C $REPO_DIR commit -m "$COMMIT_MESSAGE" -m "$DESCRIPTION"
-git -C $1 push
+git -C $REPO_DIR push
