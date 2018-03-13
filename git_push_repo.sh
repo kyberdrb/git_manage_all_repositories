@@ -18,6 +18,7 @@ git -C $REPO_DIR pull
 git -C $REPO_DIR status
 read -rsn1 -p \
   "Press any key to push changes to the repository or Ctrl+C to abort..."
+echo
 git -C $REPO_DIR add -A
 git -C $REPO_DIR commit -m "$COMMIT_MESSAGE" -m "$DESCRIPTION"
 git -C $REPO_DIR push
