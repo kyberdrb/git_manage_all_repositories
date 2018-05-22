@@ -15,6 +15,7 @@ COMMIT_MESSAGE=$2
 DESCRIPTION=$3
 
 git -C $REPO_DIR pull
+git -C $REPO_DIR diff
 git -C $REPO_DIR status
 read -rsn1 -p \
   "Press any key to push changes to the repository or Ctrl+C to abort..."
