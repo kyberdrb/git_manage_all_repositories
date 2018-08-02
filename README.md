@@ -51,5 +51,5 @@ Sources:
 https://unix.stackexchange.com/questions/162134/how-to-execute-a-bash-script-without-typing
 https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/#platform-linux
 https://stackoverflow.com/questions/9562304/github-commit-with-extended-message/29380619#29380619
-https://unix.stackexchange.com/a/294234
-
+https://unix.stackexchange.com/a/294234  
+[GitHub .gitignore not working](https://stackoverflow.com/questions/11451535/gitignore-is-not-working/11451731#11451731)

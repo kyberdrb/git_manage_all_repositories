@@ -1,5 +1,11 @@
 #!/bin/bash
 
+gitignore_not_working_fix()
+{
+  repo_dir=$1
+  git rm -r --cached "$repo_dir"
+}
+
 if [ "$#" -lt 2 ]; then
   echo "Bad number of arguments"
   echo "Usage"
@@ -14,12 +20,13 @@ REPO_DIR=$1
 COMMIT_MESSAGE=$2
 DESCRIPTION=$3
 
-git -C $REPO_DIR pull
-git -C $REPO_DIR diff
-git -C $REPO_DIR status
+gitignore_not_working_fix "$REPO_DIR"
+git -C "$REPO_DIR" pull
+git -C "$REPO_DIR" diff
+git -C "$REPO_DIR" status
 read -rsn1 -p \
   "Press any key to push changes to the repository or Ctrl+C to abort..."
 echo
-git -C $REPO_DIR add -A
-git -C $REPO_DIR commit -m "$COMMIT_MESSAGE" -m "$DESCRIPTION"
-git -C $REPO_DIR push
+git -C "$REPO_DIR" add -A
+git -C "$REPO_DIR" commit -m "$COMMIT_MESSAGE" -m "$DESCRIPTION"
+git -C "$REPO_DIR" push
