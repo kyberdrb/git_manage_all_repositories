@@ -17,9 +17,6 @@ if [ "$#" -lt 2 ]; then
 fi
 
 REPO_DIR=$1
-COMMIT_MESSAGE=$2
-DESCRIPTION=$3
-
 gitignore_not_working_fix "$REPO_DIR"
 git -C "$REPO_DIR" pull
 git -C "$REPO_DIR" diff
@@ -28,5 +25,8 @@ read -rsn1 -p \
   "Press any key to push changes to the repository or Ctrl+C to abort..."
 echo
 git -C "$REPO_DIR" add -A
+
+COMMIT_MESSAGE=$2
+DESCRIPTION=$3
 git -C "$REPO_DIR" commit -m "$COMMIT_MESSAGE" -m "$DESCRIPTION"
 git -C "$REPO_DIR" push
