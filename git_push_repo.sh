@@ -1,11 +1,5 @@
 #!/bin/bash
 
-gitignore_not_working_fix()
-{
-  repo_dir=$1
-  git rm -r --cached "$repo_dir"
-}
-
 if [ "$#" -lt 2 ]; then
   echo "Bad number of arguments"
   echo "Usage"
@@ -17,16 +11,24 @@ if [ "$#" -lt 2 ]; then
 fi
 
 REPO_DIR=$1
-gitignore_not_working_fix "$REPO_DIR"
 git -C "$REPO_DIR" pull
 git -C "$REPO_DIR" diff
 git -C "$REPO_DIR" status
 read -rsn1 -p \
   "Press any key to push changes to the repository or Ctrl+C to abort..."
 echo
+echo
+echo "If you see your '.gitignore' file is not filtering the files"
+echo
+echo "Press 'Ctrl + C' and execute command"
+echo
+echo "    git -C "$REPO_DIR" rm -r --cached
+echo
+
 git -C "$REPO_DIR" add -A
 
 COMMIT_MESSAGE=$2
 DESCRIPTION=$3
 git -C "$REPO_DIR" commit -m "$COMMIT_MESSAGE" -m "$DESCRIPTION"
 git -C "$REPO_DIR" push
+

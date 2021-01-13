@@ -9,8 +9,10 @@ if [ "$#" -ne 1 ]; then
   exit 1
 fi
 
-for d in $(find $1 -maxdepth 1 -type d)
+for d in $(find $1 -name ".git" -type d)
 do
-  echo $d
-  git -C $d pull
+  repo_name=$(echo $d/ | rev | cut -d'/' -f2 --complement | rev)
+  echo "$repo_name"
+  git -C "$repo_name" pull
 done
+
